@@ -25,7 +25,7 @@ const getWalletBalance = async() =>{
 const airDropSol = async() => {
     try {
         const fromAirDropSignature = await connection.requestAirdrop(publicKey, 1 * LAMPORTS_PER_SOL);
-        await connection(fromAirDropSignature);
+        await connection.confirmTransaction(fromAirDropSignature);
     } catch (error) {
         console.log(error)
     }
